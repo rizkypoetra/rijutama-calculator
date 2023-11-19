@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #e0ffff;
+}
+
+/* NAVBAR */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4158d0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  font-weight: 400;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Dropdown menu Metode */
+li a,
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #fcb900;
+  color: black;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #dddddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode li a:hover,
+body.dark-mode .dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+body.dark-mode .content p a {
+  color: #1a2484;
+}
+
+body.dark-mode .content p a:hover {
+  color: #4158d0;
+}
+
+/* CONTENT */
+/* home */
+.content {
+  padding: 10px 5px 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content h2 {
+  text-align: center;
+  font-size: 29px;
+}
+
+.content p {
+  margin-top: -5px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.content p a {
+  text-decoration: none;
+  color: #4158d0;
+}
+
+.content p a:hover {
+  color: #1a2484;
+}
+
+/* about */
+.content .about {
+  margin-top: -5px;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.content .about a {
+  text-decoration: none;
+  color: #4158d0;
+}
+
+.content .about a:hover {
+  color: #1a2484;
+}
+
+/* metode bagi dua */
+.content .bagi-dua {
+  margin-top: -5px;
+  text-align: justify;
+  font-size: 18px;
+}
+
+.form-container {
+  width: 80%;
+  margin: auto;
+  background-color: #9f9f9f;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+
+.form-container form {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container .button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button#calculate-btn {
+  background-color: #4158d0; /* Warna untuk tombol Menghitung */
+}
+
+.form-container button#reset-btn {
+  background-color: #ff0000; /* Warna untuk tombol Reset */
+}
+
+.form-container button:hover {
+  opacity: 0.8;
+}
+
+/* Dark mode tombol menghitung dan reset */
+body.dark-mode .form-container button#calculate-btn {
+  background-color: #34409e;
+}
+
+body.dark-mode .form-container button#reset-btn {
+  background-color: #ff3333;
+}
+
+/* Gaya untuk pesan kesalahan */
+.error-message {
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+}
+
+/* Tabel Hasil */
+#result-table-container {
+  margin-top: 20px;
+}
+
+#result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#result-table th,
+#result-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#result-table th {
+  background-color: #4158d0;
+  color: white;
+}
+
+#result-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#result-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+#result-table td {
+  white-space: nowrap;
+}
+
+/* Dark mode untuk tabel hasil */
+body.dark-mode #result-table th {
+  background-color: #34409e;
+}
+
+body.dark-mode #result-table tbody tr:nth-child(even) {
+  background-color: #444;
+}
+
+body.dark-mode #result-table tbody tr:hover {
+  background-color: #333;
+}
+
+/* Informasi di bawah tabel */
+#calculation-info {
+  margin: -20px 5px 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Gaya untuk dark mode informasi di bawah tabel */
+body.dark-mode #calculation-info {
+  background-color: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* FOOTER */
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+.footer a {
+  text-decoration: none;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+}
+
+.footer a p {
+  font-size: 14px;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.footer a p:hover {
+  transform: scale(1.1);
+}
+
+/* Gaya untuk ikon scroll to top */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(66, 90, 209, 0.8);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scroll-to-top:hover {
+  opacity: 0.8;
+}
+
+/* UNTUK RESPONSIVE */
+/* Tabel hasil bagi dua */
+@media screen and (max-width: 700px) {
+  .form-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #result-table {
+    font-size: 50%;
+  }
+
+  #result-table th,
+  #result-table td {
+    padding: 5px;
+  }
+}
